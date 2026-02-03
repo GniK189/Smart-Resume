@@ -222,9 +222,9 @@ const Hero = () => {
                 <img
                   className="h-8 w-8 rounded-full"
                   src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
-                  alt="Richard Nelson"
+                  alt="Dinh Vinh Giang"
                 />
-                <p className="font-medium text-gray-800">Richard Nelson</p>
+                <p className="font-medium text-gray-800">Dinh Vinh Giang</p>
               </div>
             </div>
 
@@ -318,9 +318,9 @@ const Hero = () => {
                 <img
                   className="h-8 w-8 rounded-full"
                   src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
-                  alt="Sophia Martinez"
+                  alt="Ho Thanh Loc"
                 />
-                <p className="font-medium text-gray-800">Sophia Martinez</p>
+                <p className="font-medium text-gray-800">Ho Thanh Loc</p>
               </div>
             </div>
 
@@ -411,9 +411,9 @@ const Hero = () => {
                 <img
                   className="h-8 w-8 rounded-full"
                   src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60"
-                  alt="Ethan Roberts"
+                  alt="Pham Tan Loc"
                 />
-                <p className="font-medium text-gray-800">Ethan Roberts</p>
+                <p className="font-medium text-gray-800">Pham Tan Loc</p>
               </div>
             </div>
           </div>
