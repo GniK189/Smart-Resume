@@ -9,7 +9,7 @@ const Hero = () => {
     <>
       <div className="min-h-[70vh]">
         {/* Navbar */}
-        <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-40 text-sm border-b border-b-gray-300">
+        <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-40 text-sm shadow">
           <a href="#">
             <img src="/logo.svg" alt="logo" className="h-11 w-auto" />
           </a>
@@ -60,7 +60,7 @@ const Hero = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 z-[100] bg-black/40 text-black backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
+          className={`fixed inset-0 z-100 bg-black/40 text-black backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
           <a href="#" className="text-white" onClick={() => setMenuOpen(false)}>
             Home
@@ -74,7 +74,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="#About"
+            href="#about"
             className="text-white"
             onClick={() => setMenuOpen(false)}
           >
@@ -93,7 +93,7 @@ const Hero = () => {
           <div className="absolute top-28 xl:top-10 -z-10 left-1/4 size-72 sm:size-96 xl:size-120 2xl:size-132 bg-indigo-300 blur-[100px] opacity-30"></div>
 
           {/* Headline*/}
-          <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-12 md:leading-[70px]">
+          <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-12 md:leading-17.5">
             Land your dream job with{" "}
             <span className=" bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
               AI-powered{" "}
