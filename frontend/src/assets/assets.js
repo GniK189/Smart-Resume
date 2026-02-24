@@ -5,7 +5,7 @@ export const dummyResumeData = [
         // ----------------------------------------------------- Resume - Nguyen Phan Trung Hieu ------------------------------------------------------
         personal_info: {
             full_name: "Nguyễn Phan Trung Hiếu",
-            email: "nptrunghieu1809@gmail.com",
+            email: "hieu@gmail.com",
             phone: "0335137638",
             location: "Đà Nẵng, Việt Nam",
             linkedin: "https://www.linkedin.com/in/nptrunghieu/",
