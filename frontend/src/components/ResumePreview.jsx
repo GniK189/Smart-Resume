@@ -62,7 +62,7 @@ const ResumePreview = ({ data, template, accentColor, classes = "" }) => {
                 box-shadow: none !important;
                 border: none !important;
               }
-          }        
+            }
           `}
         </style>
       </div>
