@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import PersonalInfoForm from "../components/PersonalInfoForm.jsx";
 import ResumePreview from "../components/ResumePreview.jsx";
+import TemplateSelector from "../components/TemplateSelector.jsx";
 
 const ResumeBuilder = () => {
   const { resumeId } = useParams();
@@ -85,11 +86,20 @@ const ResumeBuilder = () => {
                 }}
               />
 
-              {/* section nagigation */}
+              {/* section navigation */}
               <div className="flex justify-between items-center mb-6 border-b border-gray-300 py-1">
-                <div></div>
+                {/* nút chọn template */}
+                <div className="">
+                  <TemplateSelector
+                    selectedTemplate={resumeData.template}
+                    onChange={(template) =>
+                      setResumeData((prev) => ({ ...prev, template }))
+                    }
+                  />
+                </div>
+                {/* 2 nút điều hướng */}
                 <div className="flex items-center">
-                  {/* Nút previous, chỉ hiện khi không ở section đầu tiên */}
+                  {/* Nút previous, chỉ hiện khi không ở section đầu tiên (section index = 0) */}
                   {activeSectionIndex !== 0 && (
                     <button
                       onClick={() => {
@@ -103,7 +113,7 @@ const ResumeBuilder = () => {
                       <ChevronLeft className="size-4" /> Previous
                     </button>
                   )}
-                  {/* Nút next */}
+                  {/* Nút next, bị mờ đi ở trang cuối (section index = length - 1) */}
                   <button
                     onClick={() => {
                       setActiveSectionIndex((prevIndex) =>
