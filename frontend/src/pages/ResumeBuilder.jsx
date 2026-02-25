@@ -19,6 +19,8 @@ import ColorPicker from "../components/ColorPicker.jsx";
 import ProfessionalSummary from "../components/ProfessionalSummary.jsx";
 import ExperienceForm from "../components/ExperienceForm.jsx";
 import EducationForm from "../components/EducationForm.jsx";
+import ProjectForm from "../components/ProjectForm.jsx";
+import SkillsForm from "../components/SkillsForm.jsx";
 
 const ResumeBuilder = () => {
   const { resumeId } = useParams();
@@ -188,7 +190,28 @@ const ResumeBuilder = () => {
                     }
                   />
                 )}
+                {/* Dự án */}
+                {activeSection.id === "projects" && (
+                  <ProjectForm
+                    data={resumeData.project}
+                    onChange={(data) =>
+                      setResumeData((prev) => ({ ...prev, project: data }))
+                    }
+                  />
+                )}
+                {/* Skills */}
+                {activeSection.id === "skills" && (
+                  <SkillsForm
+                    data={resumeData.skills}
+                    onChange={(data) =>
+                      setResumeData((prev) => ({ ...prev, skills: data }))
+                    }
+                  />
+                )}
               </div>
+              <button className="bg-linear-to-br from-green-100 to-green-200 ring-green-300 text-green-600 ring hover:ring-green-400 transition-all rounded-md px-6 py-2 mt-6 text-sm">
+                Save Changes
+              </button>
             </div>
           </div>
 
