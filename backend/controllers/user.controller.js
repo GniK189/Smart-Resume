@@ -70,7 +70,7 @@ export const loginUser = async (req, res) => {
 export const getUserById = async (req, res) => {
   try {
     const userId = req.userId;
-    const user = await User.findOne({ userId });
+    const user = await User.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -86,9 +86,9 @@ export const getUserResumes = async (req, res) => {
   try {
     const userId = req.userId;
     const resumes = await Resume.find({ userId });
-    return res.status(400).json({ resumes });
+    return res.status(200).json({ resumes });
   } catch (error) {
-    onsole.log("Error when get user's resumes: ", error.message);
+    console.log("Error when get user's resumes: ", error.message);
     return res.status(400).json({ message: error.message });
   }
 };

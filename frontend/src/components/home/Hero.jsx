@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Title from "./Title";
+import { useSelector } from "react-redux";
 
 const Hero = () => {
+  const { user } = useSelector((state) => state.auth);
+
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
@@ -26,18 +29,31 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-2">
-            <Link
-              to="/app?state=register"
-              className="hidden md:block px-6 py-2 bg-indigo-500 hover:bg-indigo-700 active:scale-95 transition-all rounded-full text-white"
-            >
-              Get started
-            </Link>
-            <Link
-              to="/app?state=login"
-              className="hidden md:block px-6 py-2 border active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900"
-            >
-              Login
-            </Link>
+            {!user && (
+              <>
+                <Link
+                  to="/app?state=register"
+                  className="hidden md:block px-6 py-2 bg-indigo-500 hover:bg-indigo-700 active:scale-95 transition-all rounded-full text-white"
+                >
+                  Get started
+                </Link>
+                <Link
+                  to="/app?state=login"
+                  className="hidden md:block px-6 py-2 border active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900"
+                >
+                  Login
+                </Link>
+              </>
+            )}
+
+            {user && (
+              <Link
+                to="/app"
+                className="hidden md:block px-8 py-2 bg-indigo-500 hover:bg-indigo-700 active:scale-95 transition-all rounded-full text-white"
+              >
+                Dashboard
+              </Link>
+            )}
           </div>
 
           <button
@@ -109,7 +125,7 @@ const Hero = () => {
           {/* Buttons */}
           <div className="flex items-center gap-4 ">
             <Link
-              to="/app?state=register"
+              to="/app"
               className="bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center transition-colors"
             >
               Get started
